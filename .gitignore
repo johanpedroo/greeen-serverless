@@ -1,3 +1,8 @@
+.serverless
 node_modules
+.dynamodb
+offline
+dynamodb
 .idea
+coverage
 .vscode

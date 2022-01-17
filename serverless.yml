@@ -38,3 +38,28 @@ provider:
             - dynamodb:PutItem
             - dynamodb:UpdateItem
           Resource: 'arn:aws:dynamodb:${aws:region}:*:table/${self:provider.environment.DYNAMODB_TABLE}'
+
+package:
+  excludeDevDependencies: true
+  exclude:
+    - '.dynamodb/**'
+    - 'dynamodb/**'
+    - 'node_modules/aws-sdk/**'
+    - '__tests__/**'
+    - '__mocks__/**'
+    - 'coverage'
+    - 'offline'
+
+functions:
+  getvisits:
+    handler: handlers/visits/get.getVisits
+    events:
+      - httpApi:
+          path: /v1/visits
+          method: get
+  registerVisits:
+    handler: handlers/visits/register.registerVisit
+    events:
+      - httpApi:
+          path: /v1/visits/hit
+          method: get

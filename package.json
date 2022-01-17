@@ -2,11 +2,12 @@
   "name": "ton-service",
   "version": "1.0.0",
   "description": "Ton Test",
-  "repository": "",
+  "repository": "https://github.com/johanpedroo/ton",
   "author": "Johan Pedro Inês<contato@johanpedro.dev>",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "serverless offline start"
   },
   "devDependencies": {
     "@joi/date": "^2.1.0",
@@ -25,5 +26,8 @@
   },
   "pre-commit": [
     "test"
-  ]
+  ],
+  "dependencies": {
+    "countapi-js": "^1.0.2"
+  }
 }

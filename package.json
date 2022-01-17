@@ -12,7 +12,6 @@
     "deploy:homolog": "serverless deploy --region us-east-1 --stage hml"
   },
   "devDependencies": {
-    "@joi/date": "^2.1.0",
     "@types/jest": "^27.4.0",
     "babel-eslint": "^10.1.0",
     "cross-env": "^7.0.3",
@@ -30,6 +29,7 @@
     "test"
   ],
   "dependencies": {
+    "@joi/date": "^2.1.0",
     "@aws-sdk/client-dynamodb": "^3.46.0",
     "@aws-sdk/lib-dynamodb": "^3.46.0",
     "countapi-js": "^1.0.2",

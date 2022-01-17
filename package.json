@@ -1,0 +1,19 @@
+{
+  "name": "ton-service",
+  "version": "1.0.0",
+  "description": "Ton Test",
+  "repository": "",
+  "author": "Johan Pedro Inês<contato@johanpedro.dev>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.6.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1"
+  },
+  "pre-commit": [
+    "test"
+  ]
+}

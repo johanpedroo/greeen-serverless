@@ -18,6 +18,11 @@ custom:
       seed: true
     migration:
       dir: offline/migrations
+    seed:
+      test:
+        sources:
+          - table: ${self:provider.environment.DYNAMODB_TABLE}-users
+            sources: [./__tests__/seeds/users.json]
 provider:
   name: aws
   runtime: nodejs14.x
@@ -51,6 +56,18 @@ package:
     - 'offline'
 
 functions:
+  createUser:
+    handler: handlers/users/create.createUser
+    events:
+      - httpApi:
+          path: /v1/user
+          method: post
+  getUser:
+    handler: handlers/users/get.getUser
+    events:
+      - httpApi:
+          path: /v1/user/{id}
+          method: get
   getvisits:
     handler: handlers/visits/get.getVisits
     events:
@@ -63,3 +80,17 @@ functions:
       - httpApi:
           path: /v1/visits/hit
           method: get
+
+resources:
+  Resources:
+    usersTable:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+        TableName: ${self:provider.environment.DYNAMODB_TABLE}-users

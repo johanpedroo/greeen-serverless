@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Joãozinho dos Testes",
+        "email": "teste@teste.com",
+        "taxId": "00000000000",
+        "birthday": "1992-01-01",
+        "phone": "11999999999",
+        "address": {
+          "country": "Brasil",
+          "state": "São Paulo",
+          "city": "São Paulo",
+          "street": "Rua dos testes",
+          "zipCode": "87123456"
+        },
+        "id": "test-123456-654321-test"
+      }
+]

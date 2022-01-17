@@ -7,7 +7,9 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "start": "serverless offline start"
+    "start": "serverless offline start",
+    "deploy:production": "serverless deploy --region sa-east-1 --stage prd",
+    "deploy:homolog": "serverless deploy --region us-east-1 --stage hml"
   },
   "devDependencies": {
     "@joi/date": "^2.1.0",
@@ -28,6 +30,10 @@
     "test"
   ],
   "dependencies": {
-    "countapi-js": "^1.0.2"
+    "@aws-sdk/client-dynamodb": "^3.46.0",
+    "@aws-sdk/lib-dynamodb": "^3.46.0",
+    "countapi-js": "^1.0.2",
+    "joi": "^17.5.0",
+    "uuid": "^8.3.2"
   }
 }
